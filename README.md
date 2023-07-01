@@ -7,13 +7,16 @@
  1.	Python 3.x installed
  2.	MySQL Connector/Python library installed (pip install mysql-connector-python)
  3.	Pandas library installed (pip install pandas)
- 4.	Access to remote database: 
+ 4.	Access to remote database:  
+<pre>
   -	Database: a4f2b49a_sample_database  
   -	Host:40b8f30251.nxcli.io  
-  - User: a4f2b49a_padawan  
+  - User
+  -   User: a4f2b49a_padawan  
   -	Password: KaratFlanksUgliedSpinal  
   -	Port: 3306  
-
+</pre>
+ 
 Setup:  
 1.	Clone the repository to your local machine or download the script directly.  
 2.	Open the script file in your preferred text editor or integrated development environment (IDE).  
