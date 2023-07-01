@@ -26,3 +26,4 @@ Usage
 1.	Run the script using a Python interpreter.
 2.	The script will establish a connection to the specified MySQL database to read and fetch all the data from the "raw_data" table.
 3.	It will create a new table named "consolidated_data" to store the consolidated data. If the table already exists, it will be dropped before creating a new one to avoid duplication.
+4.	The script will consolidate the data by month, performing various calculations on the fetched data. The consolidated data will be stored in a pandas DataFrame.
