@@ -1,7 +1,7 @@
 # Data-Consolidation-Script-in-Python
- This repository contains a Python script for manipulating data from a MySQL remote database table and consolidating it into another MySQL table. The script utilizes the mysql.connector library for database connectivity and the pandas library for data manipulation.  
+ &ensp; This repository contains a Python script for manipulating data from a MySQL remote database table and consolidating it into another MySQL table. The script utilizes the mysql.connector library for database connectivity and the pandas library for data manipulation.  
  
- *Please take note that specifically this script is provided as a demonstration. To access the database you may need to have your IP authorized, but for privacy reasons, I will not publish it here the e-mail address to apply and I cannot guarantee that the permission will work anymore. I’m keeping this code here almost as a "read-only".  
+ &ensp; *Please take note that specifically this script is provided as a demonstration. To access the database you may need to have your IP authorized, but for privacy reasons, I will not publish it here the e-mail address to apply and I cannot guarantee that the permission will work anymore. I’m keeping this code here almost as a "read-only".  
 
 <b> Prerequisites:</b>  
  1.	Python 3.x installed
