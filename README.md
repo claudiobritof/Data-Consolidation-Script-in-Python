@@ -8,7 +8,7 @@
  2.	MySQL Connector/Python library installed (pip install mysql-connector-python)
  3.	Pandas library installed (pip install pandas)
  4.	Access to remote database: 
-  -	Banco: a4f2b49a_sample_database  
+  -	Database: a4f2b49a_sample_database  
   -	Host:40b8f30251.nxcli.io  
   - User: a4f2b49a_padawan  
   -	Password: KaratFlanksUgliedSpinal  
@@ -18,3 +18,8 @@ Setup:
 1.	Clone the repository to your local machine or download the script directly.  
 2.	Open the script file in your preferred text editor or integrated development environment (IDE).  
 3.	Modify the database connection parameters to match your MySQL database configuration.  
+
+Usage
+1.	Run the script using a Python interpreter.
+2.	The script will establish a connection to the specified MySQL database to read and fetch all the data from the "raw_data" table.
+3.	It will create a new table named "consolidated_data" to store the consolidated data. If the table already exists, it will be dropped before creating a new one to avoid duplication.
