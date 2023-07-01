@@ -12,7 +12,7 @@
   -	Database: a4f2b49a_sample_database  
   -	Host:40b8f30251.nxcli.io  
   - User
-  -   User: a4f2b49a_padawan  
+  -     User: a4f2b49a_padawan  
   -	Password: KaratFlanksUgliedSpinal  
   -	Port: 3306  
 </pre>
