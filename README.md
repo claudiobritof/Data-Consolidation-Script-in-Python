@@ -31,4 +31,4 @@
 
 Necessary data for this exercise is located on “raw_data” table, which contains these columns: 
 access_datetime: timestamp when the player executed the action.
-
+modality: type of game (could be Cash Game or Tournament).
