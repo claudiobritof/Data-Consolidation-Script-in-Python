@@ -28,3 +28,4 @@ Usage
 3.	It will create a new table named "consolidated_data" to store the consolidated data. If the table already exists, it will be dropped before creating a new one to avoid duplication.
 4.	The script will consolidate the data by month, performing various calculations on the fetched data. The consolidated data will be stored in a pandas DataFrame.
 5.	The consolidated data will be inserted into the "dados_consolidados" table row by row.
+6.	The changes will be committed to the database, and the connection will be closed.
