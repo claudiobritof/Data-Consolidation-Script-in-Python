@@ -14,3 +14,4 @@ mycursor = db.cursor()
 #Selecting data from 'raw_data' table:
 mycursor.execute("SELECT * FROM raw_data")
 
+results = mycursor.fetchall()
