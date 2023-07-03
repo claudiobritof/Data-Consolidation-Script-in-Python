@@ -20,7 +20,7 @@ results = mycursor.fetchall()
 df = pd.DataFrame(results, columns=[desc[0] for desc in mycursor.description])
 
 # Saving consolidated data in another table (if table already exists, I remove it before to avoid duplicity):
-consolidated_raw_data = "dados_consolidados"
+consolidated_raw_data = "consolidated_data"
 
 mycursor.execute(f"SHOW TABLES LIKE '{consolidated_raw_data}'")
 table_exists = mycursor.fetchone()
@@ -32,4 +32,7 @@ mycursor.execute(f"CREATE TABLE {consolidated_raw_data} (month VARCHAR(7), rake 
 
 # Consolidating data by month:
 consolidated_df = df.groupby(df['access_datetime'].str.slice(0, 7)).agg({
+    'rake': 'sum',
+    'customer_id': 'nunique',
+    'modality': lambda x: x[x == 'cash game'].count(),
 
