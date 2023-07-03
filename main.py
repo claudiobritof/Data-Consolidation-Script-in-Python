@@ -21,3 +21,9 @@ df = pd.DataFrame(results, columns=[desc[0] for desc in mycursor.description])
 
 # Saving consolidated data in another table (if table already exists, I remove it before to avoid duplicity):
 consolidated_raw_data = "dados_consolidados"
+
+mycursor.execute(f"SHOW TABLES LIKE '{consolidated_raw_data}'")
+table_exists = mycursor.fetchone()
+
+if table_exists:
+    mycursor.execute(f"DROP TABLE {consolidated_raw_data}")
