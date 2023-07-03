@@ -45,3 +45,7 @@ The idea is to consolidate the results by month, and the consolidated table will
 &ensp;• tournament_players: the distinct amount of players who played tournament in the month;  
 
 &ensp;*As I said above, you may encounter an error related to permission while executing the script, such as “ProgrammingError: 1142 (42000): CREATE command denied to user” or other. If so, it indicates that the user a4f2b49a_padawan does not have any more privileges to create tables in the database. In a properly permissioned environment, this issue should not occur.  
+  
+Contributions are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.  
+  
+MIT License
