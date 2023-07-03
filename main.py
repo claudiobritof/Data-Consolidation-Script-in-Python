@@ -28,5 +28,8 @@ table_exists = mycursor.fetchone()
 if table_exists:
     mycursor.execute(f"DROP TABLE {consolidated_raw_data}")
 
-mycursor.execute(f"CREATE TABLE {consolidated_raw_data} (mes VARCHAR(7), rake DOUBLE, jogadores INT, rake_cash_game DOUBLE, rake_torneio DOUBLE, jogadores_cash_game INT, jogadores_torneio INT)")
+mycursor.execute(f"CREATE TABLE {consolidated_raw_data} (month VARCHAR(7), rake DOUBLE, players INT, rake_cash_game DOUBLE, rake_tournament DOUBLE, players_cash_game INT, tournament_players INT)")
+
+# Consolidating data by month:
+consolidated_df = df.groupby(df['access_datetime'].str.slice(0, 7)).agg({
 
