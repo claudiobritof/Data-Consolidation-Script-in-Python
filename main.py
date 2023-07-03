@@ -28,7 +28,7 @@ table_exists = mycursor.fetchone()
 if table_exists:
     mycursor.execute(f"DROP TABLE {consolidated_raw_data}")
 
-mycursor.execute(f"CREATE TABLE {consolidated_raw_data} (month VARCHAR(7), rake DOUBLE, players INT, rake_cash_game DOUBLE, rake_tournament DOUBLE, players_cash_game INT, tournament_players INT)")
+mycursor.execute(f"CREATE TABLE {consolidated_raw_data} (month VARCHAR(7), rake DOUBLE, players INT, rake_cash_game DOUBLE, rake_tournament DOUBLE, cash_game_players INT, tournament_players INT)")
 
 # Consolidating data by month:
 consolidated_df = df.groupby(df['access_datetime'].str.slice(0, 7)).agg({
@@ -40,3 +40,7 @@ consolidated_df = df.groupby(df['access_datetime'].str.slice(0, 7)).agg({
     'customer_id': lambda x: x[x['modality'] == 'tournament'].nunique()
 }).reset_index()
 
+# Inserting consolidated data on table:
+
+for index, row in consolidated_df.iterrows():
+    mycursor.execute(f"INSERT INTO {consolidated_raw_data} (month, rake, players, rake_cash_game, rake_tournament, cash_game_players, tournament_players) VALUES (%s, %f, %d, %f, %f, %d, %d)", (row[' access_datetime'], row['rake'], row['customer_id'], row['modality_cash_game'], row['modality_tournament'], row['customer_id_cash game'], row[‘customer_id_tournament’]))
