@@ -8,3 +8,9 @@ db = mysql.connector.connect(
     passwd="KaratFlanksUgliedSpinal",
     database="a4f2b49a_sample_database"
 )
+
+mycursor = db.cursor()
+
+#Selecting data from 'raw_data' table:
+mycursor.execute("SELECT * FROM raw_data")
+
