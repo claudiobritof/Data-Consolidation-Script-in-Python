@@ -18,3 +18,6 @@ results = mycursor.fetchall()
 
 # Creating a DataFrame (pandas) with results:
 df = pd.DataFrame(results, columns=[desc[0] for desc in mycursor.description])
+
+# Saving consolidated data in another table (if table already exists, I remove it before to avoid duplicity):
+consolidated_raw_data = "dados_consolidados"
