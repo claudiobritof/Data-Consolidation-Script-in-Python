@@ -35,4 +35,8 @@ consolidated_df = df.groupby(df['access_datetime'].str.slice(0, 7)).agg({
     'rake': 'sum',
     'customer_id': 'nunique',
     'modality': lambda x: x[x == 'cash game'].count(),
+    'modality': lambda x: x[x == 'tournament'].count(),
+    'customer_id': lambda x: x[x['modality'] == 'cash game'].nunique(),
+    'customer_id': lambda x: x[x['modality'] == 'tournament'].nunique()
+}).reset_index()
 
