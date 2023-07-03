@@ -43,4 +43,11 @@ consolidated_df = df.groupby(df['access_datetime'].str.slice(0, 7)).agg({
 # Inserting consolidated data on table:
 
 for index, row in consolidated_df.iterrows():
-    mycursor.execute(f"INSERT INTO {consolidated_raw_data} (month, rake, players, rake_cash_game, rake_tournament, cash_game_players, tournament_players) VALUES (%s, %f, %d, %f, %f, %d, %d)", (row[' access_datetime'], row['rake'], row['customer_id'], row['modality_cash_game'], row['modality_tournament'], row['customer_id_cash game'], row[‘customer_id_tournament’]))
+    mycursor.execute(f"INSERT INTO {consolidated_raw_data} (month, rake, players, rake_cash_game, rake_tournament, cash_game_players, tournament_players) VALUES (%s, %f, %d, %f, %f, %d, %d)", (row[' access_datetime'], row['rake'], row['customer_id'], row['modality_cash_game'], row['modality_tournament'], row['customer_id_cash game'], row['customer_id_tournament']))
+
+#Commiting changes on database:
+db.commit()
+print(consolidated_raw_data)
+
+#Closing connection with database:
+db.close()
